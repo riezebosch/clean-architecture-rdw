@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iban", "Iban\Iban.csproj", "{D108D470-6DE3-429F-9F19-48F4F2F14F49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iban.Tests", "Iban.Tests\Iban.Tests.csproj", "{80F52C63-2C59-4CF5-A511-B7B0B3A2C110}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D108D470-6DE3-429F-9F19-48F4F2F14F49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D108D470-6DE3-429F-9F19-48F4F2F14F49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D108D470-6DE3-429F-9F19-48F4F2F14F49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D108D470-6DE3-429F-9F19-48F4F2F14F49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80F52C63-2C59-4CF5-A511-B7B0B3A2C110}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80F52C63-2C59-4CF5-A511-B7B0B3A2C110}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80F52C63-2C59-4CF5-A511-B7B0B3A2C110}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80F52C63-2C59-4CF5-A511-B7B0B3A2C110}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {46491BCD-B5AF-4172-9131-58CB286E3511}
+	EndGlobalSection
+EndGlobal
