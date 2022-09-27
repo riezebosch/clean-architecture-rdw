@@ -7,9 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Iban", "Iban\Iban.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Iban.Tests", "Iban.Tests\Iban.Tests.csproj", "{80F52C63-2C59-4CF5-A511-B7B0B3A2C110}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankCodeProviders.InMemory", "BankCodeProviders.InMemory\BankCodeProviders.InMemory.csproj", "{5038CA26-AFD3-48E6-A6F3-61EE8EE0E661}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankCodeProviders.InMemory", "BankCodeProviders.InMemory\BankCodeProviders.InMemory.csproj", "{5038CA26-AFD3-48E6-A6F3-61EE8EE0E661}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankCodeProviders.Database", "BankCodeProviders.Database\BankCodeProviders.Database.csproj", "{9E518099-8D68-4552-BEF5-232EABFF532C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankCodeProviders.Database", "BankCodeProviders.Database\BankCodeProviders.Database.csproj", "{9E518099-8D68-4552-BEF5-232EABFF532C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iban.API", "Iban.API\Iban.API.csproj", "{229652D0-FAFD-4FEF-9E8A-C0164AF30C59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iban.API.IntegrationTests", "Iban.API.Tests\Iban.API.IntegrationTests.csproj", "{7D0CB327-8DF4-4096-BEE1-D4C8544DA784}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{9E518099-8D68-4552-BEF5-232EABFF532C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E518099-8D68-4552-BEF5-232EABFF532C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E518099-8D68-4552-BEF5-232EABFF532C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{229652D0-FAFD-4FEF-9E8A-C0164AF30C59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{229652D0-FAFD-4FEF-9E8A-C0164AF30C59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{229652D0-FAFD-4FEF-9E8A-C0164AF30C59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{229652D0-FAFD-4FEF-9E8A-C0164AF30C59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D0CB327-8DF4-4096-BEE1-D4C8544DA784}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D0CB327-8DF4-4096-BEE1-D4C8544DA784}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D0CB327-8DF4-4096-BEE1-D4C8544DA784}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D0CB327-8DF4-4096-BEE1-D4C8544DA784}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
