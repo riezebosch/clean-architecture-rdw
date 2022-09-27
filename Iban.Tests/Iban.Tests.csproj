@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BankCodeProviders.InMemory\BankCodeProviders.InMemory.csproj" />
     <ProjectReference Include="..\Iban\Iban.csproj" />
   </ItemGroup>
 

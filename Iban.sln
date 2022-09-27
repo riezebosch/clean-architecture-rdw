@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iban", "Iban\Iban.csproj", "{D108D470-6DE3-429F-9F19-48F4F2F14F49}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Iban", "Iban\Iban.csproj", "{D108D470-6DE3-429F-9F19-48F4F2F14F49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iban.Tests", "Iban.Tests\Iban.Tests.csproj", "{80F52C63-2C59-4CF5-A511-B7B0B3A2C110}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Iban.Tests", "Iban.Tests\Iban.Tests.csproj", "{80F52C63-2C59-4CF5-A511-B7B0B3A2C110}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankCodeProviders.InMemory", "BankCodeProviders.InMemory\BankCodeProviders.InMemory.csproj", "{5038CA26-AFD3-48E6-A6F3-61EE8EE0E661}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankCodeProviders.Database", "BankCodeProviders.Database\BankCodeProviders.Database.csproj", "{9E518099-8D68-4552-BEF5-232EABFF532C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{80F52C63-2C59-4CF5-A511-B7B0B3A2C110}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80F52C63-2C59-4CF5-A511-B7B0B3A2C110}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80F52C63-2C59-4CF5-A511-B7B0B3A2C110}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5038CA26-AFD3-48E6-A6F3-61EE8EE0E661}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5038CA26-AFD3-48E6-A6F3-61EE8EE0E661}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5038CA26-AFD3-48E6-A6F3-61EE8EE0E661}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5038CA26-AFD3-48E6-A6F3-61EE8EE0E661}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E518099-8D68-4552-BEF5-232EABFF532C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E518099-8D68-4552-BEF5-232EABFF532C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E518099-8D68-4552-BEF5-232EABFF532C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E518099-8D68-4552-BEF5-232EABFF532C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
