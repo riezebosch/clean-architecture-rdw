@@ -3,21 +3,39 @@ using System.Linq;
 
 namespace Iban
 {
-    public static class IbanValidatorNL
+    public class IbanValidatorNL
     {
         private const string CountryCode = "NL";
+        private readonly IBankCodeProvider _provider;
 
-        public static bool Validate(string iban)
+        public IbanValidatorNL(IBankCodeProvider provider)
         {
-            
-            return !string.IsNullOrEmpty(iban) &&
-                CheckCountryCode(iban) && 
-                CheckDigits(iban);
+            _provider = provider;
         }
+
+        public bool Validate(string iban)
+        {
+            if (iban is null)
+            {
+                throw new ArgumentNullException(nameof(iban));
+            }
+
+            iban = Sanitize(iban);
+            return !string.IsNullOrEmpty(iban) &&
+                CheckCountryCode(iban) &&
+                CheckDigits(iban) &&
+                CheckBankCode(iban);
+        }
+
+        private bool CheckBankCode(string iban) => 
+            _provider.BankCodes().Contains(iban.Substring(4, 4));
+
+        private static string Sanitize(string iban) =>
+            iban.Replace(" ", "").ToUpper();
 
         private static bool CheckDigits(string iban)
         {
-            return iban.All(c => char.IsLetterOrDigit(c) || char.IsWhiteSpace(c));
+            return iban.All(c => char.IsLetterOrDigit(c));
 
             //foreach (var c in iban)
             //{
@@ -31,6 +49,6 @@ namespace Iban
         }
 
         private static bool CheckCountryCode(string iban) =>
-            iban.StartsWith(CountryCode, StringComparison.InvariantCultureIgnoreCase);
+            iban.StartsWith(CountryCode);
     }
 }
