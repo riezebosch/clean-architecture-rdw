@@ -13,7 +13,7 @@ namespace Iban.Tests
             var iban = "NL25 ABNA 0477 2566 00";
 
             // Act
-            bool result = new IbanValidatorNL(new Provider()).Validate(iban);
+            bool result = new IbanValidator(new Provider()).Validate(iban);
 
             // Assert
             Assert.True(result);
@@ -26,7 +26,7 @@ namespace Iban.Tests
             var iban = "NL25 ABNA 0477 2566 00";
 
             // Act
-            bool result = new IbanValidatorNL(new Provider()).Validate(iban);
+            bool result = new IbanValidator(new Provider()).Validate(iban);
 
             // Assert
             Assert.True(result);
@@ -39,7 +39,7 @@ namespace Iban.Tests
             var iban = "nl25 abna 0477 2566 00";
 
             // Act
-            bool result = new IbanValidatorNL(new Provider()).Validate(iban);
+            bool result = new IbanValidator(new Provider()).Validate(iban);
 
             // Assert
             Assert.True(result);
@@ -52,7 +52,7 @@ namespace Iban.Tests
             var iban = string.Empty;
 
             // Act
-            bool result = new IbanValidatorNL(new Provider()).Validate(iban);
+            bool result = new IbanValidator(new Provider()).Validate(iban);
 
             // Assert
             Assert.False(result);
@@ -65,7 +65,7 @@ namespace Iban.Tests
             var iban = "DE47 7002 0270 0015 5360 76";
 
             // Act
-            bool result = new IbanValidatorNL(new Provider()).Validate(iban);
+            bool result = new IbanValidator(new Provider()).Validate(iban);
 
             // Assert
             Assert.False(result);
@@ -78,7 +78,7 @@ namespace Iban.Tests
             var iban = "NL25 ABNA 0477 2566 0%";
 
             // Act
-            bool result = new IbanValidatorNL(new Provider()).Validate(iban);
+            bool result = new IbanValidator(new Provider()).Validate(iban);
 
             // Assert
             Assert.False(result);
@@ -91,7 +91,7 @@ namespace Iban.Tests
             var iban = "NL25 XXXX 0477 2566 00";
 
             // Act
-            bool result = new IbanValidatorNL(new Provider()).Validate(iban);
+            bool result = new IbanValidator(new Provider()).Validate(iban);
 
             // Assert
             Assert.False(result);
@@ -104,7 +104,7 @@ namespace Iban.Tests
             string? iban = null;
 
             // Act & Assert
-            var ex = Assert.Throws<ArgumentNullException>(() => new IbanValidatorNL(new Provider()).Validate(iban!));
+            var ex = Assert.Throws<ArgumentNullException>(() => new IbanValidator(new Provider()).Validate(iban!));
 
             // Assert
             Assert.Equal("iban", ex.ParamName);

@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Iban
 {
-    public class IbanValidatorNL
+    internal class IbanValidatorNL : IIbanValidator
     {
         private const string CountryCode = "NL";
         private readonly IBankCodeProvider _provider;
@@ -15,23 +15,17 @@ namespace Iban
 
         public bool Validate(string iban)
         {
-            if (iban is null)
-            {
-                throw new ArgumentNullException(nameof(iban));
-            }
-
-            iban = Sanitize(iban);
-            return !string.IsNullOrEmpty(iban) &&
+           
+            return 
                 CheckCountryCode(iban) &&
                 CheckDigits(iban) &&
                 CheckBankCode(iban);
         }
 
-        private bool CheckBankCode(string iban) => 
+        private bool CheckBankCode(string iban) =>
             _provider.BankCodes().Contains(iban.Substring(4, 4));
 
-        private static string Sanitize(string iban) =>
-            iban.Replace(" ", "").ToUpper();
+       
 
         private static bool CheckDigits(string iban)
         {
