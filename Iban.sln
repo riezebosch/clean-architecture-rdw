@@ -13,13 +13,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankCodeProviders.Database"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Iban.API", "Iban.API\Iban.API.csproj", "{229652D0-FAFD-4FEF-9E8A-C0164AF30C59}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Iban.API.IntegrationTests", "Iban.API.Tests\Iban.API.IntegrationTests.csproj", "{7D0CB327-8DF4-4096-BEE1-D4C8544DA784}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BankCodeProviders", "BankCodeProviders", "{90A7D7C7-0A78-432D-A155-F48BC1BB293C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankCodeProviders.Database.IntegrationTests", "BankCodeProviders.Database.IntegrationTests\BankCodeProviders.Database.IntegrationTests.csproj", "{4A1BC794-4A06-4557-96E6-21A98A555705}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankCodeProviders.Database.Migrations", "BankCodeProviders.Database.Migrations\BankCodeProviders.Database.Migrations.csproj", "{0A4D32DC-063F-4655-8F0B-65842597DCF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankCodeProviders.Database.Tests", "BankCodeProviders.Database.Tests\BankCodeProviders.Database.Tests.csproj", "{90ACEB76-4B4A-47B0-A3D8-EE3D30E0D059}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Iban.API.IntegrationTests", "Iban.API.IntegrationTests\Iban.API.IntegrationTests.csproj", "{CDA8480A-4D45-4C51-8C21-D5FB3F641DF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iban.API.Tests", "Iban.API.Tests\Iban.API.Tests.csproj", "{AF5AB2B1-4236-43EE-A55D-40EA0375A17D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,10 +51,6 @@ Global
 		{229652D0-FAFD-4FEF-9E8A-C0164AF30C59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{229652D0-FAFD-4FEF-9E8A-C0164AF30C59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{229652D0-FAFD-4FEF-9E8A-C0164AF30C59}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7D0CB327-8DF4-4096-BEE1-D4C8544DA784}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7D0CB327-8DF4-4096-BEE1-D4C8544DA784}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7D0CB327-8DF4-4096-BEE1-D4C8544DA784}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7D0CB327-8DF4-4096-BEE1-D4C8544DA784}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4A1BC794-4A06-4557-96E6-21A98A555705}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4A1BC794-4A06-4557-96E6-21A98A555705}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A1BC794-4A06-4557-96E6-21A98A555705}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -59,6 +59,18 @@ Global
 		{0A4D32DC-063F-4655-8F0B-65842597DCF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A4D32DC-063F-4655-8F0B-65842597DCF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A4D32DC-063F-4655-8F0B-65842597DCF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90ACEB76-4B4A-47B0-A3D8-EE3D30E0D059}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90ACEB76-4B4A-47B0-A3D8-EE3D30E0D059}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90ACEB76-4B4A-47B0-A3D8-EE3D30E0D059}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90ACEB76-4B4A-47B0-A3D8-EE3D30E0D059}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDA8480A-4D45-4C51-8C21-D5FB3F641DF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDA8480A-4D45-4C51-8C21-D5FB3F641DF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDA8480A-4D45-4C51-8C21-D5FB3F641DF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDA8480A-4D45-4C51-8C21-D5FB3F641DF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF5AB2B1-4236-43EE-A55D-40EA0375A17D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF5AB2B1-4236-43EE-A55D-40EA0375A17D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF5AB2B1-4236-43EE-A55D-40EA0375A17D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF5AB2B1-4236-43EE-A55D-40EA0375A17D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,6 +80,7 @@ Global
 		{9E518099-8D68-4552-BEF5-232EABFF532C} = {90A7D7C7-0A78-432D-A155-F48BC1BB293C}
 		{4A1BC794-4A06-4557-96E6-21A98A555705} = {90A7D7C7-0A78-432D-A155-F48BC1BB293C}
 		{0A4D32DC-063F-4655-8F0B-65842597DCF2} = {90A7D7C7-0A78-432D-A155-F48BC1BB293C}
+		{90ACEB76-4B4A-47B0-A3D8-EE3D30E0D059} = {90A7D7C7-0A78-432D-A155-F48BC1BB293C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {46491BCD-B5AF-4172-9131-58CB286E3511}

@@ -1,46 +1,21 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.Extensions.DependencyInjection;
-using System.Net.Http.Json;
+using Iban.API.Controllers;
+using Iban.Tests;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging.Abstractions;
 
-namespace Iban.API.IntegrationTests
+namespace Iban.API.Tests
 {
     public class UnitTest1
     {
-        [Fact(Skip = "krijg de controller nog niet werkend, 404")]
-        public async Task Test1Async()
+        [Fact]
+        public void Test1()
         {
             // Arrange
-            var builder = WebApplication.CreateBuilder();
-            builder.RegisterServices();
-
-            var app = builder.Build();
-            app.RegisterMiddleWare();
-            app.Urls.Add("http://localhost:1234");
-
-            await app.StartAsync();
-
-            // Act
-            var client = new HttpClient();
-            var response = await client.GetAsync("http://localhost:1234/WeatherForecast/");
+            var validator = new IbanValidator(null!);
+            var controller = new IbanController();
             
-            // Assert
-            response.EnsureSuccessStatusCode();
-        }
-
-        [Fact]
-        public async Task Factory()
-        {
-            var application = new WebApplicationFactory<Program>()
-                .WithWebHostBuilder(builder =>
-                {
-                    // ... Configure test services
-                });
-
-            var client = application.CreateClient();
-            var response = await client.GetAsync("/WeatherForecast");
-
-            response.EnsureSuccessStatusCode();
+            // Act & Assert
+            Assert.False(controller.Get("NLINGB...", validator));
         }
     }
 }
