@@ -1,5 +1,4 @@
-﻿using BankCodeProviders.InMemory;
-using Xunit;
+﻿using Xunit;
 
 namespace Iban.Tests
 {

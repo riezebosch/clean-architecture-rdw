@@ -1,4 +1,3 @@
-using BankCodeProviders.InMemory;
 using System;
 using Xunit;
 
@@ -14,7 +13,7 @@ namespace Iban.Tests
             var iban = string.Empty;
 
             // Act
-            bool result = new IbanValidator(new Provider()).Validate(iban);
+            bool result = new IbanValidator(null!).Validate(iban);
 
             // Assert
             Assert.False(result);
@@ -27,7 +26,7 @@ namespace Iban.Tests
             var iban = "DE47 7002 0270 0015 5360 76";
 
             // Act
-            bool result = new IbanValidator(new Provider()).Validate(iban);
+            bool result = new IbanValidator(null!).Validate(iban);
 
             // Assert
             Assert.False(result);
@@ -40,7 +39,7 @@ namespace Iban.Tests
             string? iban = null;
 
             // Act & Assert
-            var ex = Assert.Throws<ArgumentNullException>(() => new IbanValidator(new Provider()).Validate(iban!));
+            var ex = Assert.Throws<ArgumentNullException>(() => new IbanValidator(null!).Validate(iban!));
 
             // Assert
             Assert.Equal("iban", ex.ParamName);
