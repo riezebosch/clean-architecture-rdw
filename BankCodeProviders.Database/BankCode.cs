@@ -1,7 +1,6 @@
-﻿namespace BankCodeProviders.Database.IntegrationTests
+﻿namespace BankCodeProviders.Database;
+
+public class BankCode
 {
-    public class BankCode
-    {
-        public string Code { get; set; }
-    }
+    public string Code { get; set; }
 }

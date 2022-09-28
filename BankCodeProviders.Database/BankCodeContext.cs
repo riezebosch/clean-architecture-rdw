@@ -1,19 +1,18 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace BankCodeProviders.Database.IntegrationTests
+namespace BankCodeProviders.Database;
+
+public class BankCodeContext : DbContext
 {
-    public class BankCodeContext : DbContext
+    public BankCodeContext(DbContextOptions options) : base(options)
     {
-        public BankCodeContext(DbContextOptions options) : base(options)
-        {
-        }
+    }
 
-        public DbSet<BankCode> BankCodes { get; set; }
+    public DbSet<BankCode> BankCodes { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<BankCode>().HasKey(b => b.Code);
-            base.OnModelCreating(modelBuilder);
-        }
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<BankCode>().HasKey(b => b.Code);
+        base.OnModelCreating(modelBuilder);
     }
 }
