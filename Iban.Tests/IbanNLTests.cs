@@ -1,3 +1,4 @@
+using FluentAssertions;
 using Moq;
 using NSubstitute;
 using System;
@@ -72,6 +73,24 @@ namespace Iban.Tests
             // Assert
             Assert.True(result);
             provider.Received(1).BankCodes();
+        }
+
+        [Fact]
+        public void Validate_ValidIbanNL_FluentAssertions()
+        {
+            // Arrange
+            var iban = "NL25 ABNA 0477 2566 00";
+
+            // Act
+            var provider = Substitute.For<IBankCodeProvider>();
+            provider
+                .BankCodes()
+                .Returns(new[] { "ABNA" });
+
+            var output = new IbanValidator(provider).Validate(iban);
+
+            // Assert
+            output.Should().BeTrue();
         }
 
         [Fact]
