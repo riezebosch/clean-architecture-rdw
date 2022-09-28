@@ -11,9 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankCodeProviders.InMemory"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankCodeProviders.Database", "BankCodeProviders.Database\BankCodeProviders.Database.csproj", "{9E518099-8D68-4552-BEF5-232EABFF532C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iban.API", "Iban.API\Iban.API.csproj", "{229652D0-FAFD-4FEF-9E8A-C0164AF30C59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Iban.API", "Iban.API\Iban.API.csproj", "{229652D0-FAFD-4FEF-9E8A-C0164AF30C59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iban.API.IntegrationTests", "Iban.API.Tests\Iban.API.IntegrationTests.csproj", "{7D0CB327-8DF4-4096-BEE1-D4C8544DA784}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Iban.API.IntegrationTests", "Iban.API.Tests\Iban.API.IntegrationTests.csproj", "{7D0CB327-8DF4-4096-BEE1-D4C8544DA784}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BankCodeProviders", "BankCodeProviders", "{90A7D7C7-0A78-432D-A155-F48BC1BB293C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankCodeProviders.Database.IntegrationTests", "BankCodeProviders.Database.IntegrationTests\BankCodeProviders.Database.IntegrationTests.csproj", "{4A1BC794-4A06-4557-96E6-21A98A555705}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,9 +49,18 @@ Global
 		{7D0CB327-8DF4-4096-BEE1-D4C8544DA784}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D0CB327-8DF4-4096-BEE1-D4C8544DA784}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D0CB327-8DF4-4096-BEE1-D4C8544DA784}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A1BC794-4A06-4557-96E6-21A98A555705}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A1BC794-4A06-4557-96E6-21A98A555705}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A1BC794-4A06-4557-96E6-21A98A555705}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A1BC794-4A06-4557-96E6-21A98A555705}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5038CA26-AFD3-48E6-A6F3-61EE8EE0E661} = {90A7D7C7-0A78-432D-A155-F48BC1BB293C}
+		{9E518099-8D68-4552-BEF5-232EABFF532C} = {90A7D7C7-0A78-432D-A155-F48BC1BB293C}
+		{4A1BC794-4A06-4557-96E6-21A98A555705} = {90A7D7C7-0A78-432D-A155-F48BC1BB293C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {46491BCD-B5AF-4172-9131-58CB286E3511}
