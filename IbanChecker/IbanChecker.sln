@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IbanChecker.BankCodes.InMem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IbanChecker.BankCodes.InMemory.Tests", "IbanChecker.BankCodes.InMemory.Tests\IbanChecker.BankCodes.InMemory.Tests.csproj", "{0DCEEDEE-3CA0-4EEB-93E9-FCBC04A66FC1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IbanChecker.BankCodes.EF", "IbanChecker.BankCodes.EF\IbanChecker.BankCodes.EF.csproj", "{5349D68F-4DE4-49BB-A9D1-CF1A93B8458D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IbanChecker.BankCodes.EF.IntegrationTests", "IbanChecker.BankCodes.EF.IntegrationTests\IbanChecker.BankCodes.EF.IntegrationTests.csproj", "{0E7D8FF3-A689-48FD-9462-20D7A267DE36}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{0DCEEDEE-3CA0-4EEB-93E9-FCBC04A66FC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DCEEDEE-3CA0-4EEB-93E9-FCBC04A66FC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DCEEDEE-3CA0-4EEB-93E9-FCBC04A66FC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5349D68F-4DE4-49BB-A9D1-CF1A93B8458D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5349D68F-4DE4-49BB-A9D1-CF1A93B8458D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5349D68F-4DE4-49BB-A9D1-CF1A93B8458D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5349D68F-4DE4-49BB-A9D1-CF1A93B8458D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E7D8FF3-A689-48FD-9462-20D7A267DE36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E7D8FF3-A689-48FD-9462-20D7A267DE36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E7D8FF3-A689-48FD-9462-20D7A267DE36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E7D8FF3-A689-48FD-9462-20D7A267DE36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
