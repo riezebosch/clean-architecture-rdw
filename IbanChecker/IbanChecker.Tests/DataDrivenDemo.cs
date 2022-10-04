@@ -12,7 +12,7 @@
             // Arrange
 
             // Act
-            var actual = IbanValidator.IsValid(iban);
+            var actual = new IbanValidator(new BankCodes.InMemory.Adapter()).IsValid(iban);
 
             // Assert
             Assert.Equal(expected, actual);

@@ -11,7 +11,7 @@ public class UnitTest1
         string? iban = null;
 
         // Act
-        var actual = IbanValidator.IsValid(iban);
+        var actual = new IbanValidator(new BankCodes.InMemory.Adapter()).IsValid(iban);
 
         // Assert
         Assert.False(actual);
@@ -24,7 +24,7 @@ public class UnitTest1
         var iban = "NL25ABNA0477256600";
 
         // Act
-        var actual = IbanValidator.IsValid(iban);
+        var actual = new IbanValidator(new BankCodes.InMemory.Adapter()).IsValid(iban);
 
         // Assert
         Assert.True(actual);
@@ -37,7 +37,7 @@ public class UnitTest1
         var iban = string.Empty;
 
         // Act
-        var actual = IbanValidator.IsValid(iban);
+        var actual = new IbanValidator(new BankCodes.InMemory.Adapter()).IsValid(iban);
 
         // Assert
         Assert.False(actual);
@@ -50,7 +50,7 @@ public class UnitTest1
         var iban = "XX25ABNA0477256600";
 
         // Act
-        var actual = IbanValidator.IsValid(iban);
+        var actual = new IbanValidator(new BankCodes.InMemory.Adapter()).IsValid(iban);
 
         // Assert
         Assert.False(actual);
@@ -63,7 +63,7 @@ public class UnitTest1
         var iban = "NLXXABNA0477256600";
 
         // Act
-        var actual = IbanValidator.IsValid(iban);
+        var actual = new IbanValidator(new BankCodes.InMemory.Adapter()).IsValid(iban);
 
         // Assert
         Assert.False(actual);
@@ -71,14 +71,14 @@ public class UnitTest1
 
     [Fact]
     public void Check2ndDigitsInvalid_IsFalse() => 
-        IbanValidator
+        new IbanValidator(new BankCodes.InMemory.Adapter())
             .IsValid("NL0XABNA0477256600")
             .Should()
             .BeFalse();
 
     [Fact]
     public void BankCodeInvalid_IsFalse() =>
-    IbanValidator
+    new IbanValidator(new BankCodes.InMemory.Adapter())
         .IsValid("NL25XXXX0477256600")
         .Should()
         .BeFalse();

@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IbanChecker", "IbanChecker\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IbanChecker.Tests", "IbanChecker.Tests\IbanChecker.Tests.csproj", "{7910EA08-CB89-4B82-90DC-1752221CF326}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IbanChecker.BankCodes.InMemory", "IbanChecker.BankCodes.InMemory\IbanChecker.BankCodes.InMemory.csproj", "{F3A8E744-9CF8-42A3-9BCE-FAF8CE05582A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IbanChecker.BankCodes.InMemory.Tests", "IbanChecker.BankCodes.InMemory.Tests\IbanChecker.BankCodes.InMemory.Tests.csproj", "{0DCEEDEE-3CA0-4EEB-93E9-FCBC04A66FC1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{7910EA08-CB89-4B82-90DC-1752221CF326}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7910EA08-CB89-4B82-90DC-1752221CF326}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7910EA08-CB89-4B82-90DC-1752221CF326}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3A8E744-9CF8-42A3-9BCE-FAF8CE05582A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3A8E744-9CF8-42A3-9BCE-FAF8CE05582A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3A8E744-9CF8-42A3-9BCE-FAF8CE05582A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3A8E744-9CF8-42A3-9BCE-FAF8CE05582A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DCEEDEE-3CA0-4EEB-93E9-FCBC04A66FC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DCEEDEE-3CA0-4EEB-93E9-FCBC04A66FC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DCEEDEE-3CA0-4EEB-93E9-FCBC04A66FC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DCEEDEE-3CA0-4EEB-93E9-FCBC04A66FC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

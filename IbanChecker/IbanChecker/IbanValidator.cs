@@ -1,8 +1,15 @@
 ﻿namespace IbanChecker;
 
-public static class IbanValidator
+public class IbanValidator
 {
-    public static bool IsValid(string? iban)
+    private readonly IBankCodes _provider;
+
+    public IbanValidator(IBankCodes provider)
+    {
+        _provider = provider;
+    }
+
+    public bool IsValid(string? iban)
     {
         return !string.IsNullOrEmpty(iban) &&
             CheckCountryCode(iban) &&
@@ -20,8 +27,10 @@ public static class IbanValidator
         return char.IsNumber(iban[2]) && char.IsNumber(iban[3]);
     }
 
-    private static bool CheckBankCode(string iban)
-    {
-        return new[] { "ABNA" }.Contains(iban.Substring(4, 4));
+    private bool CheckBankCode(string iban)
+    { 
+        return _provider
+            .Get()
+            .Contains(iban.Substring(4, 4));
     }
 }
