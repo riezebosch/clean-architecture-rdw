@@ -5,14 +5,19 @@ using Moq;
 
 namespace IbanChecker.Api.IntegrationTests;
 
-public class UnitTest1
+public sealed class UnitTest1 : IDisposable
 {
+    private readonly MockRepository repository = new(MockBehavior.Strict);
+
+    public void Dispose() => 
+        repository.VerifyAll();
+
     [Fact]
     public async Task Test1Async()
     {
         // Arrange
         const string iban = "NL25ABNA0477256600";
-        var validator = new Mock<IIbanValidator>(MockBehavior.Strict);
+        var validator = repository.Create<IIbanValidator>();
         validator
             .Setup(x => x.IsValid(iban))
             .Returns(true)
@@ -35,7 +40,5 @@ public class UnitTest1
         // Assert
         Assert.True(response.IsSuccessStatusCode, await response.Content.ReadAsStringAsync());
         Assert.Equal("true", await response.Content.ReadAsStringAsync());
-
-        validator.VerifyAll();
     }
 }
