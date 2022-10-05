@@ -1,35 +1,21 @@
-using Microsoft.AspNetCore.Builder;
+namespace IbanChecker.Api.IntegrationTests;
 
-namespace IbanChecker.Api.IntegrationTests
+public class UnitTest1
 {
-    public class UnitTest1
+    [Fact]
+    public async Task Test1Async()
     {
-        [Fact]
-        public async Task Test1Async()
-        {
-            var args = new[] { "--urls=http://localhost:1234" };
-            var builder = WebApplication.CreateBuilder(args);
+        // Arrange
+        var url = "http://localhost:1234";
+        await using var app = Startup.App(new[] { $"--urls={url}" });
+        await app.StartAsync();
 
-            // Add services to the container.
+        // Act
+        using var client = new HttpClient();
+        using var response = await client.GetAsync($"{url}/NL25ABNA0477256600");
 
-            using var app = builder.Build();
-
-            // Configure the HTTP request pipeline.
-
-            app.UseHttpsRedirection();
-
-
-
-            app.MapGet("/", () => "hello");
-
-            await app.StartAsync();
-
-            using var client = new HttpClient();
-            using var response = await client.GetAsync("http://localhost:1234");
-
-            response.EnsureSuccessStatusCode();
-
-            Assert.Equal("hello", await response.Content.ReadAsStringAsync());
-        }
+        // Assert
+        response.EnsureSuccessStatusCode();
+        Assert.Equal("true", await response.Content.ReadAsStringAsync());
     }
 }

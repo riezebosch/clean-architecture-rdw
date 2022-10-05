@@ -1,1 +1,3 @@
-Console.WriteLine();
+using IbanChecker.Api;
+
+await Startup.App(args).RunAsync();
