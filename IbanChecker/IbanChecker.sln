@@ -3,17 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IbanChecker", "IbanChecker\IbanChecker.csproj", "{DCEE029B-0D10-4AB1-B508-80BB6C004149}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IbanChecker", "IbanChecker\IbanChecker.csproj", "{DCEE029B-0D10-4AB1-B508-80BB6C004149}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IbanChecker.Tests", "IbanChecker.Tests\IbanChecker.Tests.csproj", "{7910EA08-CB89-4B82-90DC-1752221CF326}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IbanChecker.Tests", "IbanChecker.Tests\IbanChecker.Tests.csproj", "{7910EA08-CB89-4B82-90DC-1752221CF326}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IbanChecker.BankCodes.InMemory", "IbanChecker.BankCodes.InMemory\IbanChecker.BankCodes.InMemory.csproj", "{F3A8E744-9CF8-42A3-9BCE-FAF8CE05582A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IbanChecker.BankCodes.InMemory", "IbanChecker.BankCodes.InMemory\IbanChecker.BankCodes.InMemory.csproj", "{F3A8E744-9CF8-42A3-9BCE-FAF8CE05582A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IbanChecker.BankCodes.InMemory.Tests", "IbanChecker.BankCodes.InMemory.Tests\IbanChecker.BankCodes.InMemory.Tests.csproj", "{0DCEEDEE-3CA0-4EEB-93E9-FCBC04A66FC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IbanChecker.BankCodes.InMemory.Tests", "IbanChecker.BankCodes.InMemory.Tests\IbanChecker.BankCodes.InMemory.Tests.csproj", "{0DCEEDEE-3CA0-4EEB-93E9-FCBC04A66FC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IbanChecker.BankCodes.EF", "IbanChecker.BankCodes.EF\IbanChecker.BankCodes.EF.csproj", "{5349D68F-4DE4-49BB-A9D1-CF1A93B8458D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IbanChecker.BankCodes.EF", "IbanChecker.BankCodes.EF\IbanChecker.BankCodes.EF.csproj", "{5349D68F-4DE4-49BB-A9D1-CF1A93B8458D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IbanChecker.BankCodes.EF.IntegrationTests", "IbanChecker.BankCodes.EF.IntegrationTests\IbanChecker.BankCodes.EF.IntegrationTests.csproj", "{0E7D8FF3-A689-48FD-9462-20D7A267DE36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IbanChecker.BankCodes.EF.IntegrationTests", "IbanChecker.BankCodes.EF.IntegrationTests\IbanChecker.BankCodes.EF.IntegrationTests.csproj", "{0E7D8FF3-A689-48FD-9462-20D7A267DE36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IbanChecker.BankCodes.EF.Tests", "IbanChecker.BankCodes.EF.Tests\IbanChecker.BankCodes.EF.Tests.csproj", "{FA843B31-0603-4FD8-9A08-FBB6A17FF3F0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BankCodes", "BankCodes", "{10CAB35A-F7A4-4984-A5F0-DF926B2E8F14}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,9 +49,19 @@ Global
 		{0E7D8FF3-A689-48FD-9462-20D7A267DE36}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E7D8FF3-A689-48FD-9462-20D7A267DE36}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E7D8FF3-A689-48FD-9462-20D7A267DE36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA843B31-0603-4FD8-9A08-FBB6A17FF3F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA843B31-0603-4FD8-9A08-FBB6A17FF3F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA843B31-0603-4FD8-9A08-FBB6A17FF3F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA843B31-0603-4FD8-9A08-FBB6A17FF3F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F3A8E744-9CF8-42A3-9BCE-FAF8CE05582A} = {10CAB35A-F7A4-4984-A5F0-DF926B2E8F14}
+		{5349D68F-4DE4-49BB-A9D1-CF1A93B8458D} = {10CAB35A-F7A4-4984-A5F0-DF926B2E8F14}
+		{0E7D8FF3-A689-48FD-9462-20D7A267DE36} = {10CAB35A-F7A4-4984-A5F0-DF926B2E8F14}
+		{FA843B31-0603-4FD8-9A08-FBB6A17FF3F0} = {10CAB35A-F7A4-4984-A5F0-DF926B2E8F14}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3C840B30-2358-44BC-A8F8-1543B44CE412}
