@@ -7,7 +7,7 @@ namespace IbanChecker.Api.IntegrationTests
         [Fact]
         public async Task Test1Async()
         {
-            var args = Array.Empty<string>();
+            var args = new[] { "--urls=http://localhost:1234" };
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
@@ -22,7 +22,6 @@ namespace IbanChecker.Api.IntegrationTests
 
             app.MapGet("/", () => "hello");
 
-            app.Urls.Add("http://localhost:1234");
             await app.StartAsync();
 
             using var client = new HttpClient();
