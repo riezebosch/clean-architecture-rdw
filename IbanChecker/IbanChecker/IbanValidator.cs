@@ -1,6 +1,6 @@
 ﻿namespace IbanChecker;
 
-public class IbanValidator
+public class IbanValidator : IIbanValidator
 {
     private readonly IBankCodes _provider;
 
@@ -28,7 +28,7 @@ public class IbanValidator
     }
 
     private bool CheckBankCode(string iban)
-    { 
+    {
         return _provider
             .Get()
             .Contains(iban.Substring(4, 4));
