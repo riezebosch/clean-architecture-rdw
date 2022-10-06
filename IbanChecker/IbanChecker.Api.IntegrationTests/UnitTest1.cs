@@ -24,7 +24,7 @@ public sealed class UnitTest1 : IDisposable
             .Returns(true)
             .Verifiable();
 
-        var url = "http://localhost:1234";
+        var url = new Uri("http://localhost:1234");
         await using var app = Startup.App(new[] { $"--urls={url}" }, services =>
         {
             services.RemoveAll<IIbanValidator>();
@@ -35,8 +35,11 @@ public sealed class UnitTest1 : IDisposable
         await app.StartAsync();
 
         // Act
-        using var client = new HttpClient();
-        using var response = await client.GetAsync($"{url}/{iban}");
+        using var client = new HttpClient
+        {
+            BaseAddress = url
+        };
+        using var response = await client.GetAsync($"/{iban}");
 
         // Assert
         Assert.True(response.IsSuccessStatusCode, await response.Content.ReadAsStringAsync());
@@ -53,7 +56,7 @@ public sealed class UnitTest1 : IDisposable
             .IsValid(iban)
             .Returns(true);
 
-        var url = "http://localhost:1234";
+        var url = new Uri("http://localhost:1234");
         await using var app = Startup.App(new[] { $"--urls={url}" }, services =>
         {
             services.RemoveAll<IIbanValidator>();
@@ -64,8 +67,11 @@ public sealed class UnitTest1 : IDisposable
         await app.StartAsync();
 
         // Act
-        using var client = new HttpClient();
-        using var response = await client.GetAsync($"{url}/{iban}");
+        using var client = new HttpClient
+        {
+            BaseAddress = url
+        };
+        using var response = await client.GetAsync($"/{iban}");
 
         // Assert
         Assert.True(response.IsSuccessStatusCode, await response.Content.ReadAsStringAsync());
