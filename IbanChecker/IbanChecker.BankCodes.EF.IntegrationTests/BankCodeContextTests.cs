@@ -8,19 +8,19 @@ public class BankCodeContextTests :
     IClassFixture<DatabaseFixture>, 
     IDisposable
 {
-    private readonly DatabaseFixture fixture;
+    private readonly DatabaseFixture _fixture;
 
     public BankCodeContextTests(DatabaseFixture fixture) => 
-        this.fixture = fixture;
+        _fixture = fixture;
 
     [Fact]
     public async Task Test1Async()
     {
-        await fixture
+        await _fixture
             .Context
             .BankCodes
             .AddAsync(new BankCode { Code = "ABNA" });
-        await fixture
+        await _fixture
             .Context
             .SaveChangesAsync();
     }
@@ -29,10 +29,10 @@ public class BankCodeContextTests :
     public async Task CodeShouldHaveMaxLength()
     {
         // Arrange
-        await fixture.Context.BankCodes.AddAsync(new BankCode { Code = "ABNAX" });
+        await _fixture.Context.BankCodes.AddAsync(new BankCode { Code = "ABNAX" });
 
         // Act
-        var act = () => fixture.Context.SaveChangesAsync();
+        var act = () => _fixture.Context.SaveChangesAsync();
 
         // Assert
         var ex = await act.Should()
@@ -42,5 +42,5 @@ public class BankCodeContextTests :
     }
 
     void IDisposable.Dispose() => 
-        fixture.Context.ChangeTracker.Clear();
+        _fixture.Context.ChangeTracker.Clear();
 }

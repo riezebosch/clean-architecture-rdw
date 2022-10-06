@@ -8,17 +8,17 @@ namespace IbanChecker.Api.IntegrationTests;
 
 public sealed class UnitTest1 : IDisposable
 {
-    private readonly MockRepository repository = new(MockBehavior.Strict);
+    private readonly MockRepository _repository = new(MockBehavior.Strict);
 
     public void Dispose() => 
-        repository.VerifyAll();
+        _repository.VerifyAll();
 
     [Fact]
     public async Task Test1Async()
     {
         // Arrange
         const string iban = "NL25ABNA0477256600";
-        var validator = repository.Create<IIbanValidator>();
+        var validator = _repository.Create<IIbanValidator>();
         validator
             .Setup(x => x.IsValid(iban))
             .Returns(true)

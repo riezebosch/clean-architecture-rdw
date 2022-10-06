@@ -8,7 +8,7 @@ public class DatabaseFixture : IAsyncLifetime
 
     public DatabaseFixture()
     {
-        Context = new BankCodeContext(new DbContextOptionsBuilder().UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB; Initial Catalog=test").Options); ;
+        Context = new BankCodeContext(new DbContextOptionsBuilder().UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB; Initial Catalog=test").Options);
     }
 
     public async Task InitializeAsync()

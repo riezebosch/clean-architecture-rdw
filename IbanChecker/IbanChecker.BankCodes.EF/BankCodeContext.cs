@@ -21,6 +21,4 @@ public class BankCodeContext : DbContext
     }
 
     public DbSet<BankCode> BankCodes { get; internal set; }
-
-
 }

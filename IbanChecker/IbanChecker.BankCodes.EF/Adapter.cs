@@ -2,9 +2,9 @@
 
 public class Adapter : IBankCodes
 {
-    private readonly BankCodeContext context;
+    private readonly BankCodeContext _context;
 
-    public Adapter(BankCodeContext context) => this.context = context;
+    public Adapter(BankCodeContext context) => this._context = context;
 
-    public IEnumerable<string> Get() => context.BankCodes.Select(x => x.Code);
+    public IEnumerable<string> Get() => _context.BankCodes.Select(x => x.Code);
 }
