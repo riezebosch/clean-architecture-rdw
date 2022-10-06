@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Moq;
+using NSubstitute;
 
 namespace IbanChecker.Api.IntegrationTests;
 
@@ -40,5 +41,38 @@ public sealed class UnitTest1 : IDisposable
         // Assert
         Assert.True(response.IsSuccessStatusCode, await response.Content.ReadAsStringAsync());
         Assert.Equal("true", await response.Content.ReadAsStringAsync());
+    }
+
+    [Fact]
+    public async Task Test1NSubstitute()
+    {
+        // Arrange
+        const string iban = "NL25ABNA0477256600";
+        var validator = Substitute.For<IIbanValidator>();
+        validator
+            .IsValid(iban)
+            .Returns(true);
+
+        var url = "http://localhost:1234";
+        await using var app = Startup.App(new[] { $"--urls={url}" }, services =>
+        {
+            services.RemoveAll<IIbanValidator>();
+            services.AddScoped(_ => validator);
+        });
+        app.UseDeveloperExceptionPage();
+
+        await app.StartAsync();
+
+        // Act
+        using var client = new HttpClient();
+        using var response = await client.GetAsync($"{url}/{iban}");
+
+        // Assert
+        Assert.True(response.IsSuccessStatusCode, await response.Content.ReadAsStringAsync());
+        Assert.Equal("true", await response.Content.ReadAsStringAsync());
+
+        validator
+            .Received()
+            .IsValid(iban);
     }
 }
