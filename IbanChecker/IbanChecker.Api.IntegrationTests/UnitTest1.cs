@@ -25,13 +25,10 @@ public sealed class UnitTest1 : IDisposable
             .Verifiable();
 
         var url = new Uri("http://localhost:1234");
-        await using var app = Startup.App(new[] { $"--urls={url}" }, services =>
-        {
-            services.RemoveAll<IIbanValidator>();
-            services.AddScoped(_ => validator.Object);
-        });
+        await using var app = Startup.App(new[] { $"--urls={url}" }, services => 
+            services.Replace(new ServiceDescriptor(typeof(IIbanValidator), validator.Object)));
+        
         app.UseDeveloperExceptionPage();
-
         await app.StartAsync();
 
         // Act
@@ -58,12 +55,9 @@ public sealed class UnitTest1 : IDisposable
 
         var url = new Uri("http://localhost:1234");
         await using var app = Startup.App(new[] { $"--urls={url}" }, services =>
-        {
-            services.RemoveAll<IIbanValidator>();
-            services.AddScoped(_ => validator);
-        });
-        app.UseDeveloperExceptionPage();
+            services.Replace(new ServiceDescriptor(typeof(IIbanValidator), validator)));
 
+        app.UseDeveloperExceptionPage();
         await app.StartAsync();
 
         // Act
