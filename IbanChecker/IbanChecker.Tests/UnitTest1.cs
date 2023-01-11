@@ -1,5 +1,3 @@
-using FluentAssertions;
-
 namespace IbanChecker.Tests;
 
 public class UnitTest1
