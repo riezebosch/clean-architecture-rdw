@@ -1,3 +1,4 @@
+using LanguageExt;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -21,7 +22,7 @@ public sealed class UnitTest1 : IDisposable
         var validator = _repository.Create<IIbanValidator>();
         validator
             .Setup(x => x.IsValid(iban))
-            .Returns(true)
+            .Returns(Validation<string, string>.Success(iban))
             .Verifiable();
 
         var url = new Uri("http://localhost:1234");
@@ -51,7 +52,7 @@ public sealed class UnitTest1 : IDisposable
         var validator = Substitute.For<IIbanValidator>();
         validator
             .IsValid(iban)
-            .Returns(true);
+            .Returns(Validation<string, string>.Success(iban));
 
         var url = new Uri("http://localhost:1234");
         await using var app = Startup.App(new[] { $"--urls={url}" }, services =>

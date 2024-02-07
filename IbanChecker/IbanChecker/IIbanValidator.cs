@@ -1,7 +1,9 @@
-﻿namespace IbanChecker
+﻿using LanguageExt;
+
+namespace IbanChecker
 {
     public interface IIbanValidator
     {
-        bool IsValid(string? iban);
+        Validation<string, string> IsValid(string? iban);
     }
 }

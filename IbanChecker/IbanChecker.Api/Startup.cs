@@ -10,7 +10,7 @@ public static class Startup
         builder
             .Services
             .AddScoped<IIbanValidator, IbanValidator>()
-            .AddScoped<IBankCodes, BankCodes.EF.Adapter>();
+            .AddScoped<IBankCodes, BankCodes.InMemory.Adapter>();
 
         configure?.Invoke(builder.Services);
 

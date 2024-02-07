@@ -12,7 +12,10 @@ public class UnitTest1
         var actual = new IbanValidator(new BankCodes.InMemory.Adapter()).IsValid(iban);
 
         // Assert
-        Assert.False(actual);
+        actual
+            .FailToSeq()
+            .Should()
+            .BeEquivalentTo("Input is empty");
     }
 
     [Fact]
@@ -25,7 +28,7 @@ public class UnitTest1
         var actual = new IbanValidator(new BankCodes.InMemory.Adapter()).IsValid(iban);
 
         // Assert
-        Assert.True(actual);
+        Assert.True(actual.IsSuccess);
     }
 
     [Fact]
@@ -38,7 +41,7 @@ public class UnitTest1
         var actual = new IbanValidator(new BankCodes.InMemory.Adapter()).IsValid(iban);
 
         // Assert
-        Assert.False(actual);
+        Assert.True(actual.IsFail);
     }
 
     [Fact]
@@ -51,7 +54,10 @@ public class UnitTest1
         var actual = new IbanValidator(new BankCodes.InMemory.Adapter()).IsValid(iban);
 
         // Assert
-        Assert.False(actual);
+        actual
+            .FailAsEnumerable()
+            .Should()
+            .BeEquivalentTo("Dutch iban should start with NL");
     }
 
     [Fact]
@@ -64,13 +70,17 @@ public class UnitTest1
         var actual = new IbanValidator(new BankCodes.InMemory.Adapter()).IsValid(iban);
 
         // Assert
-        Assert.False(actual);
+        actual
+            .FailToSeq()
+            .Should()
+            .BeEquivalentTo("Checksum should consist out of 2 digits");
     }
 
     [Fact]
     public void Check2ndDigitsInvalid_IsFalse() => 
         new IbanValidator(new BankCodes.InMemory.Adapter())
             .IsValid("NL0XABNA0477256600")
+            .IsSuccess
             .Should()
             .BeFalse();
 
@@ -78,6 +88,7 @@ public class UnitTest1
     public void BankCodeInvalid_IsFalse() =>
     new IbanValidator(new BankCodes.InMemory.Adapter())
         .IsValid("NL25XXXX0477256600")
+        .IsSuccess
         .Should()
         .BeFalse();
 }
